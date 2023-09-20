@@ -7,6 +7,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper
 public interface TechLeadMapper {
     TechLeadMapper INSTANCE = Mappers.getMapper(TechLeadMapper.class);
@@ -20,4 +22,6 @@ public interface TechLeadMapper {
     //to dto (entity to respDto)
 
     TechLeadRespDTO toTechLeadRespDTO(TechLead techLead);
+
+    List<TechLeadRespDTO> toRespDtoList(List<TechLead> list);
 }

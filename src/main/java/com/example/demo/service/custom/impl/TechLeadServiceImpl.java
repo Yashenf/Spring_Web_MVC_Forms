@@ -1,17 +1,16 @@
-package com.example.demo.service.impl;
+package com.example.demo.service.custom.impl;
 
 import com.example.demo.dto.req.TechLeadReqDTO;
 import com.example.demo.dto.res.TechLeadRespDTO;
 import com.example.demo.entity.TechLead;
 import com.example.demo.repository.TechLeadRepo;
-import com.example.demo.service.TechLeadService;
+import com.example.demo.service.custom.TechLeadService;
 import com.example.demo.util.ecxeptions.EntryNotFoundException;
 import com.example.demo.util.mappers.TechLeadMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TechLeadServiceImpl implements TechLeadService {
@@ -54,7 +53,9 @@ public class TechLeadServiceImpl implements TechLeadService {
     }
 
     @Override
-    public List<TechLead> showAll() {
-        return repo.findAll();
+    public List<TechLeadRespDTO> showAll() {
+        List<TechLead> all = repo.findAll();
+        return mapper.toRespDtoList(all);
     }
 }
+

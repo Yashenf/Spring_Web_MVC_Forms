@@ -3,7 +3,7 @@ package com.example.demo.controllers;
 import com.example.demo.dto.req.TechLeadReqDTO;
 import com.example.demo.dto.res.TechLeadRespDTO;
 import com.example.demo.entity.TechLead;
-import com.example.demo.service.impl.TechLeadServiceImpl;
+import com.example.demo.service.custom.impl.TechLeadServiceImpl;
 import com.example.demo.util.StandardResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/techLeads")
 public class TechLeadController {
-    private TechLeadServiceImpl service;
+    private final TechLeadServiceImpl service;
 
     @Autowired
     public TechLeadController(TechLeadServiceImpl service) {
@@ -67,7 +67,7 @@ public class TechLeadController {
 
     @GetMapping
     public ResponseEntity<StandardResponse> showAll(){
-        List<TechLead> techLeads = service.showAll();
+        List<TechLeadRespDTO> techLeads = service.showAll();
         return new ResponseEntity<StandardResponse>(
                 new StandardResponse(
                         201,
