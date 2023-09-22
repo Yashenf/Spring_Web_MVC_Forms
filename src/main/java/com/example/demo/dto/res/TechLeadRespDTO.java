@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class TechLeadRespDTO {
-    private Integer tId;
+    private Integer id;
     private String fullName;
     private String mobile;
     private String email;

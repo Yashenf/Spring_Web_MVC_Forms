@@ -20,7 +20,6 @@ public interface TechLeadMapper {
     TechLead toEntity (TechLeadReqDTO dto);
 
     //to dto (entity to respDto)
-
     TechLeadRespDTO toTechLeadRespDTO(TechLead techLead);
 
     List<TechLeadRespDTO> toRespDtoList(List<TechLead> list);

@@ -42,6 +42,7 @@ public class TechLeadServiceImpl implements TechLeadService {
     @Override
     public TechLeadRespDTO showOne(Integer id) {
         TechLead byId = repo.findById(id).orElseThrow(()-> new EntryNotFoundException("TechLead Id :- "+id+" Not Found "));
+        System.out.println(byId);
         return mapper.toTechLeadRespDTO(byId);
     }
 

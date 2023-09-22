@@ -14,7 +14,7 @@ package com.example.demo.entity;
 public class TechLead {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer tId;
+    private Integer id;
     private String fullName;
     private String mobile;
     private String email;

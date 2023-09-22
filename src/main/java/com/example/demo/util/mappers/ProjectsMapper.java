@@ -1,5 +1,6 @@
 package com.example.demo.util.mappers;
 
+import com.example.demo.dto.core.ProjectDTO;
 import com.example.demo.dto.req.ProjectReqDTO;
 import com.example.demo.dto.res.ProjectRespDTO;
 import com.example.demo.entity.Project;
@@ -12,7 +13,7 @@ import java.util.List;
 public interface ProjectsMapper {
     ProjectsMapper INSTANCE =  Mappers.getMapper(ProjectsMapper.class);
 
-    Project toEntity(ProjectReqDTO dto);
+    Project toEntity(ProjectDTO dto);
     ProjectRespDTO toRespDto(Project p);
 
     List<ProjectRespDTO> toResponses(List<Project> projects);
